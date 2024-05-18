@@ -106,7 +106,7 @@ int main()
     int num, data, position;
     while (1)
     {
-        printf("1.Insert at Begin\n2.Insert at End\n3.Insert at Position\n4.Display\n5.Exit\n\nEnter your choice : ");
+        printf("1. Insert at Begin\n2. Insert at End\n3. Insert at Position\n4. Delete at Begin\n5. Display\n6. Exit\n\nEnter your choice : ");
         scanf("%d",&num);
         switch (num)
         {
@@ -128,9 +128,11 @@ int main()
             InsertAtPosition(data, position);
             break;
         case 4:
-            Display();
             break;
         case 5:
+            Display();
+            break;
+        case 6:
         default:
             FreeList();
             return 0;
