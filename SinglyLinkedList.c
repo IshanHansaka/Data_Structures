@@ -25,6 +25,10 @@ void Update(int data ,int possition);
 struct node* CreateNewNode(int data)
 {
     struct node* temp = (struct node*) malloc(sizeof(struct node));
+    if (temp == NULL) {
+        printf("Memory allocation failed!\n");
+        exit(1);
+    }
     temp->next = NULL;
     temp->data = data;
     return temp;
