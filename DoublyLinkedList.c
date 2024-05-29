@@ -181,6 +181,18 @@ void DisplayReverse()
     printf("\n\n");
 }
 
+void FreeList()
+{
+    struct node* ptr = head;
+    while(ptr != NULL)
+    {
+        struct node* temp = ptr;
+        ptr = ptr->next;
+        free(temp);
+    }
+    printf("Link List Deleted!\n\n");
+}
+
 int main(){
 
     return 0;
