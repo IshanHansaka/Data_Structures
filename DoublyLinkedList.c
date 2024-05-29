@@ -14,6 +14,12 @@ struct node* tail = NULL; //create tail node
 struct node* createNewNode(int data);
 void InsertAtBegin(int data);
 void InsertAtEnd(int data);
+void InsertAtPosition(int data, int position);
+void DeleteAtBegin();
+void DeleteAtEnd();
+void DeleteAtposition(int possition);
+
+
 
 struct node* createNewNode(int data)
 {
@@ -66,7 +72,6 @@ void InsertAtPosition(int data, int position)
     }
     if(position == 0){
         InsertAtBegin(data);
-        printf("Node Added!\n\n");
         return;
     }
     struct node* ptr = head;
@@ -83,6 +88,67 @@ void InsertAtPosition(int data, int position)
     ptr->next = temp;
     temp->prev = ptr;
     printf("Node Added!\n\n");
+}
+
+void DeleteAtBegin()
+{
+    if(head == NULL)
+    {
+        printf("Linked List is empty! Node can't delete!\n\n");
+        return;
+    }
+    struct node* ptr = head;
+    head = head->next;
+    head->prev = NULL;
+    free(ptr);
+    printf("Node deleted!\n\n");
+}
+
+void DeleteAtEnd()
+{
+    if(head == NULL)
+    {
+        printf("Linked List is empty! Node can't delete!\n\n");
+        return;
+    }
+    struct node* ptr = tail;
+    tail = tail->prev;
+    tail->next = NULL;
+    free(ptr);
+    printf("Node deleted!\n\n");
+}
+
+void DeleteAtposition(int possition)
+{
+    if(head == NULL)
+    {
+        printf("Linked List is empty! Node can't delete!\n\n");
+        return;
+    }
+    if(possition == 0)
+    {
+        DeleteAtBegin();
+        return;
+    }
+    struct node* ptr = head;
+    for (int i = 0; i < possition; i++)
+    {
+        if (ptr == NULL)
+        {
+            printf("Invalid position! Enter a valid position!\n\n");
+            return;
+        }
+        ptr = ptr->next;
+    }
+    ptr->prev->next = ptr->next;
+    ptr->next->prev = ptr->prev;
+    free(ptr);
+    printf("Node deleted!\n\n");
+}
+
+void Display()
+{
+
 }
 
 int main(){
