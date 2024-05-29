@@ -17,7 +17,7 @@ void InsertAtEnd(int data);
 void InsertAtPosition(int data, int position);
 void DeleteAtBegin();
 void DeleteAtEnd();
-void DeleteAtposition(int possition);
+void DeleteAtPosition(int position);
 void Display();
 void DisplayReverse();
 void Search(int data);
@@ -121,22 +121,22 @@ void DeleteAtEnd()
     printf("Node deleted!\n\n");
 }
 
-void DeleteAtposition(int possition)
+void DeleteAtPosition(int position)
 {
     if(head == NULL)
     {
         printf("Linked List is empty! Node can't delete!\n\n");
         return;
     }
-    if(possition == 0)
+    if(position == 0)
     {
         DeleteAtBegin();
         return;
     }
     struct node* ptr = head;
-    for (int i = 0; i < possition; i++)
+    for (int i = 0; i < position; i++)
     {
-        if (ptr == NULL)
+        if (ptr->next == NULL)
         {
             printf("Invalid position! Enter a valid position!\n\n");
             return;
@@ -237,6 +237,66 @@ void FreeList()
 }
 
 int main(){
-
-    return 0;
+    int num, data, position;
+    while (1)
+    {
+        printf("1. Insert at Begin\n2. Insert at End\n3. Insert at Position\n4. Delete at Begin\n5. Delete at End\n6. Delete at Position\n7. Display\n8. Display Reverse\n9. Search\n10. Update\n11. Exit\n\nEnter your choice : ");
+        scanf("%d",&num);
+        switch (num)
+        {
+        case 1:
+            printf("Enter data to add: ");
+            scanf("%d", &data);
+            InsertAtBegin(data);
+            break;
+        case 2:
+            printf("Enter data to add: ");
+            scanf("%d", &data);
+            InsertAtEnd(data);
+            break;
+        case 3:
+            printf("Enter data to add: ");
+            scanf("%d", &data);
+            printf("Enter position: ");
+            scanf("%d", &position);
+            InsertAtPosition(data, position);
+            break;
+        case 4:
+            DeleteAtBegin();
+            break;
+        case 5:
+            DeleteAtEnd();
+            break;
+        case 6:
+            printf("Enter position: ");
+            scanf("%d", &position);
+            DeleteAtPosition(position);
+            break;
+        case 7:
+            Display();
+            break;
+        case 8:
+            printf("\n");
+            DisplayReverse(head);
+            printf("\n\n");
+            break;
+        case 9:
+            printf("Enter data to search: ");
+            scanf("%d", &data);
+            Search(data);
+            break;
+        case 10:
+            printf("Enter position to Update: ");
+            scanf("%d", &position);
+            printf("Enter data to add: ");
+            scanf("%d", &data);
+            Update(data, position);
+            break;
+        case 11:
+            FreeList();
+            return 0;
+        default:
+            printf("Wrong input, try again!\n\n");
+        }
+    }
 }
