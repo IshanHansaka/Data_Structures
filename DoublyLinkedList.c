@@ -233,6 +233,8 @@ void FreeList()
         ptr = ptr->next;
         free(temp);
     }
+    head = NULL;
+    tail = NULL;
     printf("Link List Deleted!\n\n");
 }
 
@@ -277,7 +279,7 @@ int main(){
             break;
         case 8:
             printf("\n");
-            DisplayReverse(head);
+            DisplayReverse();
             printf("\n\n");
             break;
         case 9:
