@@ -79,12 +79,12 @@ void InsertAtPosition(int data, int position)
     }
     struct node* ptr = head;
     for(int i = 0; i < position-1; i++){
+        ptr = ptr->next;
         if (ptr->next == NULL)
         {
             printf("Invalid position! Enter a valid position!\n\n");
             return;
         }
-        ptr = ptr->next;
     }
     temp->next = ptr->next;
     ptr->next->prev = temp;
@@ -136,12 +136,12 @@ void DeleteAtPosition(int position)
     struct node* ptr = head;
     for (int i = 0; i < position; i++)
     {
+        ptr = ptr->next;
         if (ptr->next == NULL)
         {
             printf("Invalid position! Enter a valid position!\n\n");
             return;
         }
-        ptr = ptr->next;
     }
     ptr->prev->next = ptr->next;
     ptr->next->prev = ptr->prev;
