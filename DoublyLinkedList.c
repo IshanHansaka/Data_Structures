@@ -18,7 +18,8 @@ void InsertAtPosition(int data, int position);
 void DeleteAtBegin();
 void DeleteAtEnd();
 void DeleteAtposition(int possition);
-
+void Display();
+void DisplayReverse();
 
 
 struct node* createNewNode(int data)
@@ -144,6 +145,40 @@ void DeleteAtposition(int possition)
     ptr->next->prev = ptr->prev;
     free(ptr);
     printf("Node deleted!\n\n");
+}
+
+void Display()
+{
+    if(head == NULL)
+    {
+        printf("Linked List is empty! Node can't delete!\n\n");
+        return;
+    }
+    struct node* ptr = head;
+    printf("\n");
+    while(ptr != NULL)
+    {
+        printf("%d ",ptr->data);
+        ptr = ptr->next;
+    }
+    printf("\n\n");
+}
+
+void DisplayReverse()
+{
+    if(head == NULL)
+    {
+        printf("Linked List is empty! Node can't delete!\n\n");
+        return;
+    }
+    struct node* ptr = tail;
+    printf("\n");
+    while(ptr != NULL)
+    {
+        printf("%d ",ptr->data);
+        ptr = ptr->prev;
+    }
+    printf("\n\n");
 }
 
 int main(){
