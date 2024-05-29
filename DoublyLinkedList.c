@@ -146,11 +146,6 @@ void DeleteAtposition(int possition)
     printf("Node deleted!\n\n");
 }
 
-void Display()
-{
-
-}
-
 int main(){
 
     return 0;
