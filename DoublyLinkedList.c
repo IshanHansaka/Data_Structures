@@ -100,6 +100,12 @@ void DeleteAtBegin()
         printf("Linked List is empty! Node can't delete!\n\n");
         return;
     }
+    if(head == tail) 
+    {
+        head = tail = NULL;
+        printf("Node deleted!\n\n");
+        return;
+    }
     struct node* ptr = head;
     head = head->next;
     head->prev = NULL;
@@ -112,6 +118,12 @@ void DeleteAtEnd()
     if(head == NULL)
     {
         printf("Linked List is empty! Node can't delete!\n\n");
+        return;
+    }
+    if(head == tail) 
+    {
+        head = tail = NULL;
+        printf("Node deleted!\n\n");
         return;
     }
     struct node* ptr = tail;
@@ -153,7 +165,7 @@ void Display()
 {
     if(head == NULL)
     {
-        printf("Linked List is empty! Node can't delete!\n\n");
+        printf("Linked List is empty!\n\n");
         return;
     }
     struct node* ptr = head;
@@ -170,7 +182,7 @@ void DisplayReverse()
 {
     if(head == NULL)
     {
-        printf("Linked List is empty! Node can't delete!\n\n");
+        printf("Linked List is empty!\n\n");
         return;
     }
     struct node* ptr = tail;
@@ -233,8 +245,7 @@ void FreeList()
         ptr = ptr->next;
         free(temp);
     }
-    head = NULL;
-    tail = NULL;
+    head = tail = NULL;
     printf("Link List Deleted!\n\n");
 }
 
