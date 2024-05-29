@@ -20,7 +20,7 @@ void DeleteAtEnd();
 void DeleteAtPosition(int possition);
 void DisplayReverse(struct node* temp);
 void Search(int data);
-void Update(int data ,int possition);
+void Update(int data ,int position);
 
 struct node* CreateNewNode(int data)
 {
@@ -201,7 +201,7 @@ void Search(int data)
     printf("\nData is not in the list\n\n");
 }
 
-void Update(int data ,int possition)
+void Update(int data ,int position)
 {
     if (head == NULL)
     {
@@ -209,7 +209,7 @@ void Update(int data ,int possition)
         return;
     }
     struct node* ptr = head;
-    for(int i = 0; i < possition; i++)
+    for(int i = 0; i < position; i++)
     {
         if (ptr == NULL)
         {

@@ -20,7 +20,9 @@ void DeleteAtEnd();
 void DeleteAtposition(int possition);
 void Display();
 void DisplayReverse();
-
+void Search(int data);
+void Update(int data ,int position);
+void FreeList();
 
 struct node* createNewNode(int data)
 {
@@ -179,6 +181,47 @@ void DisplayReverse()
         ptr = ptr->prev;
     }
     printf("\n\n");
+}
+
+void Search(int data)
+{
+    if (head == NULL)
+    {
+        printf("Linked List is empty!");
+        return;
+    }
+    struct node* ptr = head;
+    while(ptr != NULL)
+    {
+        if(ptr->data == data)
+        {
+            printf("\nData in the list\n\n");
+            return;
+        }
+        ptr = ptr->next;
+    }
+    printf("\nData is not in the list\n\n");
+}
+
+void Update(int data ,int position)
+{
+    if (head == NULL)
+    {
+        printf("Linked List is empty!");
+        return;
+    }
+    struct node* ptr = head;
+    for(int i = 0; i < position; i++)
+    {
+        if (ptr == NULL)
+        {
+            printf("Invalid position! Enter a valid position!\n\n");
+            return;
+        }
+        ptr = ptr->next;
+    }
+    ptr->data = data;
+    printf("Node Updated!\n\n");
 }
 
 void FreeList()
