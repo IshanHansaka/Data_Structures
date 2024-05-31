@@ -15,8 +15,10 @@ A singly linked list is a data structure consisting of a sequence of nodes. Each
 **Features:**
 - Insertion (beginning, end, specified position)
 - Deletion (beginning, end, specified position)
-- Search
 - Display
+- Display Reverse
+- Search
+- Update
 
 ### Doubly Linked List
 
@@ -25,9 +27,10 @@ A doubly linked list is similar to a singly linked list but with an additional p
 **Features:**
 - Insertion (beginning, end, specified position)
 - Deletion (beginning, end, specified position)
-- Search
 - Display
-- Reverse traversal
+- Display Reverse
+- Search
+- Update
 
 ### Circular Linked List
 
@@ -36,5 +39,7 @@ A circular linked list is a variation where the last node points back to the fir
 **Features:**
 - Insertion (beginning, end, specified position)
 - Deletion (beginning, end, specified position)
-- Search
 - Display
+- Display Reverse
+- Search
+- Update
