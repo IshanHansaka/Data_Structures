@@ -7,6 +7,13 @@ struct node {
     struct node* next;
 };
 
+bool isEmpty();
+struct node* createnewNode(int data);
+void enqueue(int data);
+int dequeue();
+int peek();
+void display();
+void freeQueue(struct node* ptr);
 struct node* front = NULL;
 
 bool isEmpty() {
