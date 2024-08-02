@@ -7,6 +7,13 @@ int front = 0;
 int rear = -1;
 int size = 0;
 
+bool isEmpty();
+bool isFull();
+void enqueue(int data);
+int dequeue();
+int peek();
+void display();
+
 bool isEmpty() {
     return size == 0;
 }
