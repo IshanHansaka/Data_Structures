@@ -2,3 +2,6 @@ SinglyLinkedList.exe
 DoublyLinkedList.exe
 CircularLinkedList.exe
 StackWithArray.exe
+StackWithLinkedList.exe
+QueueWithArray.exe
+QueueWithLinkedList.exe
