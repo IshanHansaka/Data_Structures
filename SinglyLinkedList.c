@@ -140,7 +140,7 @@ void DeleteAtPosition(int possition)
         return;
     }
     struct node* ptr = head;
-    for(int i = 0; i < possition-2; i++)
+    for(int i = 1; i < possition; i++)
     {
         if (ptr == NULL)
         {
