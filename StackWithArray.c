@@ -6,7 +6,7 @@ int stack[Max_size];
 int top = -1;
 
 bool isFull() {
-    return top == Max_size;
+    return top == Max_size - 1;
 }
 
 bool isEmpty() {
@@ -22,13 +22,12 @@ void push(int data) {
     printf("Data Pushed!\n\n");
 }
 
-int pop () {
+int pop() {
     if (isEmpty()) {
         printf("Stack is Empty! Can't pop.\n\n");
         return -1;
     }
-    int data = stack[top--];
-    return data;
+    return stack[top--];
 }
 
 int peek() {
@@ -36,11 +35,14 @@ int peek() {
         printf("Stack is Empty!\n\n");
         return -1;
     }
-    int data = stack[top];
-    return data;
+    return stack[top];
 }
 
 void display() {
+    if (isEmpty()) {
+        printf("Stack is Empty!\n\n");
+        return;
+    }
     for (int i = top; i >= 0; i--) {
         printf("|\t%d\t|\n", stack[i]);
     }
@@ -50,8 +52,8 @@ void display() {
 int main() {
     int choice, data;
     while (true) {
-        printf("\n1.Push Data\n2.Pop Data\n3.Display Stack\n4.Check Empty\n5.Check Full\n6.Peek Data\n7.Exit\n");
-        printf("\nEnter your choice : ");
+        printf("\n1. Push Data\n2. Pop Data\n3. Display Stack\n4. Check Empty\n5. Check Full\n6. Peek Data\n7. Exit\n");
+        printf("\nEnter your choice: ");
         scanf("%d", &choice);
         switch (choice) {
         case 1:
@@ -60,7 +62,9 @@ int main() {
             push(data);
             break;
         case 2:
-            printf("Popped : %d\n\n", pop());
+            data = pop();
+            if (data != -1)
+                printf("Popped: %d\n\n", data);
             break;
         case 3:
             display();
@@ -78,11 +82,12 @@ int main() {
                 printf("Stack is not full.\n\n");
             break;
         case 6:
-            printf("Top element is : %d\n\n", peek());
+            data = peek();
+            if (data != -1)
+                printf("Top element is: %d\n\n", data);
             break;
         case 7:
             return 0;
-            break;   
         default:
             printf("Invalid Operation\n\n");
             break;
