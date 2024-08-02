@@ -7,6 +7,14 @@ struct node {
     struct node* next;
 };
 
+struct node* createNewNode(int data);
+bool isEmpty();
+void push(int data);
+int pop();
+int peek();
+void display();
+void freeStack(struct node* ptr);
+
 struct node* top = NULL;
 
 struct node* createNewNode(int data) {
