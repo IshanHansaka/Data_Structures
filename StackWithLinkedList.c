@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <stdbool.h>
-#include<stdlib.h>
+#include <stdlib.h>
 
 struct node {
     int data;
     struct node* next;
 };
 
-struct  node* top = NULL;
+struct node* top = NULL;
 
 struct node* createNewNode(int data) {
     struct node* temp = (struct node*) malloc(sizeof(struct node));
@@ -57,12 +57,12 @@ int peek() {
 }
 
 void display() {
-        if (isEmpty()) {
+    if (isEmpty()) {
         printf("Stack is Empty!\n\n");
         return;
     } 
     struct node* ptr = top;
-    while(ptr != NULL) {
+    while (ptr != NULL) {
         printf("|\t%d\t|\n", ptr->data);
         ptr = ptr->next;
     }
@@ -108,7 +108,9 @@ int main() {
                 printf("Top element is: %d\n\n", data);
             break;
         case 6:
-            freeStack(top);
+            if (!isEmpty()) {
+                freeStack(top);
+            }
             return 0;
         default:
             printf("Invalid Operation\n\n");
