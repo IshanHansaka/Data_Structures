@@ -6,6 +6,16 @@ struct node{
   struct node* next;
 };
 
+struct node* createNewNode(int data);
+void InsertAtBegin(int data);
+void InsertAtEnd(int data);
+void InsertAtPosition(int data, int position);
+void DeleteAtBegin();
+void DeleteAtEnd();
+void DeleteAtPosition(int position);
+void Display();
+void FreeList(struct node* ptr);
+
 struct node* head = NULL;
 
 struct node* createNewNode(int data)
