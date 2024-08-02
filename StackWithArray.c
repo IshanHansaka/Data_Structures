@@ -5,6 +5,13 @@
 int stack[Max_size];
 int top = -1;
 
+bool isFull();
+bool isEmpty();
+void push(int data);
+int pop();
+int peek();
+void display();
+
 bool isFull() {
     return top == Max_size - 1;
 }
